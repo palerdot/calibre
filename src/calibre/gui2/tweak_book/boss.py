@@ -9,7 +9,7 @@ __copyright__ = '2013, Kovid Goyal <kovid at kovidgoyal.net>'
 import tempfile, shutil, sys, os
 from functools import partial, wraps
 
-from PyQt4.Qt import (
+from PyQt5.Qt import (
     QObject, QApplication, QDialog, QGridLayout, QLabel, QSize, Qt,
     QDialogButtonBox, QIcon, QTimer, QPixmap, QTextBrowser, QVBoxLayout,
     QInputDialog)

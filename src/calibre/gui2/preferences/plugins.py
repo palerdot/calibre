@@ -8,7 +8,7 @@ __docformat__ = 'restructuredtext en'
 import textwrap, os
 from collections import OrderedDict
 
-from PyQt4.Qt import (Qt, QModelIndex, QAbstractItemModel, QVariant, QIcon,
+from PyQt5.Qt import (Qt, QModelIndex, QAbstractItemModel, QVariant, QIcon,
         QBrush)
 
 from calibre.gui2.preferences import ConfigWidgetBase, test_widget
@@ -438,7 +438,7 @@ class ConfigWidget(ConfigWidgetBase, Ui_Form):
 
 
 if __name__ == '__main__':
-    from PyQt4.Qt import QApplication
+    from PyQt5.Qt import QApplication
     app = QApplication([])
     test_widget('Advanced', 'Plugins')
 

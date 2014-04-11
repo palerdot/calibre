@@ -5,12 +5,12 @@ import traceback, os, sys, functools, textwrap
 from functools import partial
 from threading import Thread
 
-from PyQt4.Qt import (
+from PyQt5.Qt import (
     QApplication, Qt, QIcon, QTimer, QByteArray, QSize, QTime, QDoubleSpinBox,
     QLabel, QPropertyAnimation, pyqtSignal, QUrl, QRegExpValidator, QRegExp,
     QLineEdit, QToolButton, QMenu, QInputDialog, QAction, QModelIndex, QPalette,
     QPainter, QBrush, QColor)
-from PyQt4.QtWebKit import QWebView
+from PyQt5.QtWebKit import QWebView
 
 from calibre.gui2.viewer.main_ui import Ui_EbookViewer
 from calibre.gui2.viewer.printing import Printing

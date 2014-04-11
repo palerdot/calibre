@@ -11,7 +11,7 @@ from collections import namedtuple
 from future_builtins import map
 from itertools import product
 
-from PyQt4.Qt import (
+from PyQt5.Qt import (
     QDialog, QGridLayout, QStackedWidget, QDialogButtonBox, QListWidget,
     QListWidgetItem, QIcon, QWidget, QSize, QFormLayout, Qt, QSpinBox,
     QCheckBox, pyqtSignal, QDoubleSpinBox, QComboBox, QLabel, QFont,

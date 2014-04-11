@@ -8,7 +8,7 @@ __copyright__ = '2013, Kovid Goyal <kovid at kovidgoyal.net>'
 
 import cPickle, os
 
-from PyQt4.Qt import (
+from PyQt5.Qt import (
     Qt, QDialog, QListWidgetItem, QFileDialog, QItemSelectionModel)
 
 from calibre.gui2.viewer.bookmarkmanager_ui import Ui_BookmarkManager
@@ -114,7 +114,7 @@ class BookmarkManager(QDialog, Ui_BookmarkManager):
                 self.set_bookmarks([bm for bm in bookmarks if bm['title'] != 'calibre_current_page_bookmark'])
 
 if __name__ == '__main__':
-    from PyQt4.Qt import QApplication
+    from PyQt5.Qt import QApplication
     app = QApplication([])
     d = BookmarkManager(None, [{'title':'Bookmark #%d' % i, 'data':b'xxxxx'} for i in range(1, 5)])
     d.exec_()

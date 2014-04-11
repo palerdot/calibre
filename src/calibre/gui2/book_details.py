@@ -5,11 +5,11 @@ __license__   = 'GPL v3'
 __copyright__ = '2010, Kovid Goyal <kovid@kovidgoyal.net>'
 __docformat__ = 'restructuredtext en'
 
-from PyQt4.Qt import (QPixmap, QSize, QWidget, Qt, pyqtSignal, QUrl, QIcon,
+from PyQt5.Qt import (QPixmap, QSize, QWidget, Qt, pyqtSignal, QUrl, QIcon,
     QPropertyAnimation, QEasingCurve, QApplication, QFontInfo, QAction,
     QSizePolicy, QPainter, QRect, pyqtProperty, QLayout, QPalette, QMenu,
     QPen, QColor)
-from PyQt4.QtWebKit import QWebView
+from PyQt5.QtWebKit import QWebView
 
 from calibre import fit_image
 from calibre.gui2.dnd import (dnd_has_image, dnd_get_image, dnd_get_files,

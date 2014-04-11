@@ -8,7 +8,7 @@ __copyright__ = '2013, Kovid Goyal <kovid at kovidgoyal.net>'
 
 from collections import namedtuple
 
-from PyQt4.Qt import (QColor, QBrush, QFont, QApplication, QPalette)
+from PyQt5.Qt import (QColor, QBrush, QFont, QApplication, QPalette)
 
 from calibre.gui2.tweak_book.editor import SyntaxTextCharFormat
 
