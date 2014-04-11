@@ -509,7 +509,7 @@ Available from: http://www.riverbankcomputing.co.uk/software/sip/download ::
 
     python configure.py -p win32-msvc2008 && nmake && nmake install
 
-PyQt4
+PyQt5
 ----------
 
 Compiling instructions::
