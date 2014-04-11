@@ -658,8 +658,9 @@ class RulesModel(QAbstractListModel):  # {{{
             return (kind, col, rule)
 
     def add_rule(self, kind, col, rule):
+        self.beginResetModel()
         self.rules.append((kind, col, rule))
-        self.reset()
+        self.endResetModel()
         return self.index(len(self.rules)-1)
 
     def replace_rule(self, index, kind, col, r):
@@ -667,8 +668,9 @@ class RulesModel(QAbstractListModel):  # {{{
         self.dataChanged.emit(index, index)
 
     def remove_rule(self, index):
+        self.beginResetModel()
         self.rules.remove(self.rules[index.row()])
-        self.reset()
+        self.endResetModel()
 
     def commit(self, prefs):
         rules = []
@@ -695,7 +697,8 @@ class RulesModel(QAbstractListModel):  # {{{
 
     def clear(self):
         self.rules = []
-        self.reset()
+        self.beginResetModel()
+        self.endResetModel()
 
     def rule_to_html(self, kind, col, rule):
         trans_kind = 'not found'
