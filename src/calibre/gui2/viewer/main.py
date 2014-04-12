@@ -10,7 +10,7 @@ from PyQt5.Qt import (
     QLabel, QPropertyAnimation, pyqtSignal, QUrl, QRegExpValidator, QRegExp,
     QLineEdit, QToolButton, QMenu, QInputDialog, QAction, QModelIndex, QPalette,
     QPainter, QBrush, QColor)
-from PyQt5.QtWebKit import QWebView
+from PyQt5.QtWebKitWidgets import QWebView
 
 from calibre.gui2.viewer.main_ui import Ui_EbookViewer
 from calibre.gui2.viewer.printing import Printing
