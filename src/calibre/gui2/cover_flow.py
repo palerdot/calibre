@@ -358,7 +358,7 @@ class CoverFlowMixin(object):
         self.cf_last_updated_at = time.time()
 
 def test():
-    from PyQt5.QtGui import QApplication, QMainWindow
+    from PyQt5.Qt import QApplication, QMainWindow
     app = QApplication([])
     w = QMainWindow()
     cf = CoverFlow()
@@ -377,7 +377,7 @@ def main(args=sys.argv):
     return 0
 
 if __name__ == '__main__':
-    from PyQt5.QtGui import QApplication, QMainWindow
+    from PyQt5.Qt import QApplication, QMainWindow
     app = QApplication([])
     w = QMainWindow()
     cf = CoverFlow()
