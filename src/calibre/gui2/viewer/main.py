@@ -361,7 +361,7 @@ class EbookViewer(MainWindow, Ui_EbookViewer):
         self.clear_recent_history_action.triggered.connect(self.clear_recent_history)
         self.build_recent_menu()
         self.action_open_ebook.setMenu(self.open_history_menu)
-        self.open_history_menu.triggered[QAction].connect(self.open_recent)
+        self.open_history_menu.triggered.connect(self.open_recent)
         w = self.tool_bar.widgetForAction(self.action_open_ebook)
         w.setPopupMode(QToolButton.MenuButtonPopup)
 
