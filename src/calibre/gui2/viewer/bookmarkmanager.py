@@ -6,11 +6,12 @@ from __future__ import (unicode_literals, division, absolute_import,
 __license__ = 'GPL v3'
 __copyright__ = '2013, Kovid Goyal <kovid at kovidgoyal.net>'
 
-import cPickle, os
+import cPickle
 
 from PyQt5.Qt import (
-    Qt, QDialog, QListWidgetItem, QFileDialog, QItemSelectionModel)
+    Qt, QDialog, QListWidgetItem, QItemSelectionModel)
 
+from calibre.gui2 import choose_save_file, choose_files
 from calibre.gui2.viewer.bookmarkmanager_ui import Ui_BookmarkManager
 
 class BookmarkManager(QDialog, Ui_BookmarkManager):
@@ -78,19 +79,22 @@ class BookmarkManager(QDialog, Ui_BookmarkManager):
         return [self.item_to_bm(l.item(i)) for i in xrange(l.count())]
 
     def export_bookmarks(self):
-        filename = QFileDialog.getSaveFileName(self, _("Export Bookmarks"),
-                '%s%suntitled.pickle' % (os.getcwdu(), os.sep),
-                _("Saved Bookmarks (*.pickle)"))
-        if not filename:
+        path = choose_save_file(self, 'export_viewer_bookmarks', _("Export Bookmarks"),
+                                filters=[(_('Saved Bookmarks'), ['pickle'])])
+        if not path:
             return
+        if not path.endswith('.pickle'):
+            path += '.pickle'
 
-        with open(filename, 'w') as fileobj:
+        with open(path, 'w') as fileobj:
             cPickle.dump(self.get_bookmarks(), fileobj)
 
     def import_bookmarks(self):
-        filename = QFileDialog.getOpenFileName(self, _("Import Bookmarks"), '%s' % os.getcwdu(), _("Pickled Bookmarks (*.pickle)"))
-        if not filename:
+        paths = choose_files(self, 'import_viewer_bookmarks', _('Import Bookmarks'),
+                             filters=[(_('Saved Bookmarks'), ['pickle'])], all_files=False, select_only_single_file=True)
+        if not paths:
             return
+        filename = paths[0]
 
         imported = None
         with open(filename, 'r') as fileobj:
