@@ -330,7 +330,7 @@ class CheckLibraryDialog(QDialog):
         child_count = tl.childCount()
         for i in range(0, child_count):
             item = tl.child(i)
-            id = item.data(0, Qt.UserRole).toInt()[0]
+            id = int(item.data(0, Qt.UserRole))
             all = self.db.formats(id, index_is_id=True, verify_formats=False)
             all = set([f.strip() for f in all.split(',')]) if all else set()
             valid = self.db.formats(id, index_is_id=True, verify_formats=True)
@@ -343,7 +343,7 @@ class CheckLibraryDialog(QDialog):
         child_count = tl.childCount()
         for i in range(0, child_count):
             item = tl.child(i)
-            id = item.data(0, Qt.UserRole).toInt()[0]
+            id = int(item.data(0, Qt.UserRole))
             self.db.set_has_cover(id, False)
 
     def fix_extra_covers(self):
@@ -351,7 +351,7 @@ class CheckLibraryDialog(QDialog):
         child_count = tl.childCount()
         for i in range(0, child_count):
             item = tl.child(i)
-            id = item.data(0, Qt.UserRole).toInt()[0]
+            id = int(item.data(0, Qt.UserRole))
             self.db.set_has_cover(id, True)
 
     def fix_items(self):
