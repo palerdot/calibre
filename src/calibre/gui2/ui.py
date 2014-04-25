@@ -70,7 +70,8 @@ class Listener(Thread):  # {{{
     def close(self):
         self._run = False
         try:
-            self.listener.close()
+            if self.listener is not None:
+                self.listener.close()
         except:
             import traceback
             traceback.print_exc()
