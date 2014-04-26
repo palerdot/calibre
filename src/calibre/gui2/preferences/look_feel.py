@@ -154,7 +154,7 @@ class ConfigWidget(ConfigWidgetBase, Ui_Form):
 
         r('cover_flow_queue_length', config, restart_required=True)
         r('cover_browser_reflections', gprefs)
-        r('extra_row_spacing', gprefs)
+        r('book_list_extra_row_spacing', gprefs)
 
         def get_esc_lang(l):
             if l == 'en':
