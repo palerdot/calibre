@@ -158,7 +158,7 @@ class SyntaxHighlighter(object):
     def apply_format_changes(self, doc, block, formats):
         layout = block.layout()
         preedit_start = layout.preeditAreaPosition()
-        preedit_length = layout.preeditAreaText().length()
+        preedit_length = len(layout.preeditAreaText())
         ranges = []
         R = QTextLayout.FormatRange
         for i, num, fmt in formats:
