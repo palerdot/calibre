@@ -154,6 +154,12 @@ def test_magick():
     i = qimage_to_magick(img)
     print ('magick OK!')
 
+def test_netifaces():
+    import netifaces
+    if len(netifaces.interfaces()) < 1:
+        raise ValueError('netifaces could find no network interfaces')
+    print ('netifaces OK!')
+
 def test():
     test_plugins()
     test_lxml()
@@ -168,6 +174,7 @@ def test():
     test_html5lib()
     test_regex()
     test_magick()
+    test_netifaces()
     if iswindows:
         test_winutil()
         test_wpd()
