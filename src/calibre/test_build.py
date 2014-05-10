@@ -160,6 +160,11 @@ def test_netifaces():
         raise ValueError('netifaces could find no network interfaces')
     print ('netifaces OK!')
 
+def test_psutil():
+    import psutil
+    psutil.Process(os.getpid())
+    print ('psutil OK!')
+
 def test():
     test_plugins()
     test_lxml()
@@ -175,6 +180,7 @@ def test():
     test_regex()
     test_magick()
     test_netifaces()
+    test_psutil()
     if iswindows:
         test_winutil()
         test_wpd()
