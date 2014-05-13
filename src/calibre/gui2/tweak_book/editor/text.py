@@ -419,7 +419,7 @@ class TextEdit(PlainTextEdit):
         block = c.block()
         while block.isValid():
             for r in block.layout().additionalFormats():
-                if r.format.property(SPELL_PROPERTY).toPyObject() is not None:
+                if r.format.property(SPELL_PROPERTY) is not None:
                     if not from_cursor or block.position() + r.start + r.length > c.position():
                         c.setPosition(block.position() + r.start)
                         c.setPosition(c.position() + r.length, c.KeepAnchor)

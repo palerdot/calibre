@@ -353,7 +353,7 @@ class Editor(QMainWindow):
         a = m.addAction
         c = self.editor.cursorForPosition(pos)
         fmt = self.editor.syntax_format_for_cursor(c)
-        spell = fmt.property(SPELL_PROPERTY).toPyObject() if fmt is not None else None
+        spell = fmt.property(SPELL_PROPERTY) if fmt is not None else None
         if spell is not None:
             word, locale = spell
             orig_pos = c.position()
