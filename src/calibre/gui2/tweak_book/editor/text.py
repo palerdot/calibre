@@ -566,7 +566,7 @@ class TextEdit(PlainTextEdit):
         block = c.block()
         while block.isValid():
             for r in block.layout().additionalFormats():
-                x = r.format.property(SPELL_PROPERTY).toPyObject()
+                x = r.format.property(SPELL_PROPERTY)
                 if x is not None and word == x[0]:
                     self.highlighter.reformat_block(block)
                     break
